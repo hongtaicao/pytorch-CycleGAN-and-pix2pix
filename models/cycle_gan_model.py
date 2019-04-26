@@ -96,6 +96,10 @@ class CycleGANModel(BaseModel):
             self.optimizers.append(self.optimizer_G)
             self.optimizers.append(self.optimizer_D)
 
+    def __repr__(self):
+        return '\n'.join([str(m) for m in [self.netG_A, self.netG_B, \
+            self.netD_A, self.netD_B]])
+
     def set_input(self, input):
         """Unpack input data from the dataloader and perform necessary pre-processing steps.
 
